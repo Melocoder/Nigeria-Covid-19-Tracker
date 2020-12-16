@@ -1,7 +1,5 @@
 $(document).ready(function () {
     let [total, active, discharge, death] = [document.querySelector('#totalCases'), document.querySelector('#activeCases'), document.querySelector('#discharged'), document.querySelector('#death')];
-
-
     
 
     fetch('https://covidnigeria.herokuapp.com/api')
@@ -13,7 +11,7 @@ $(document).ready(function () {
       discharge.textContent = resp.data.discharged;
       death.textContent = resp.data.death;
 
-      $('#example').DataTable({
+      $('#dataTable').DataTable({
         data: resp.data.states,
         columns: [
           { title: 'State', data: 'state' },
